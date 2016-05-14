@@ -5,6 +5,9 @@ player_names = %w(Noah Tyler Pete Andrew Joseph Liam Nathaniel Michael Dylan Ben
 
 class Player
 
+  attr_reader :inning_positions
+  attr_reader :name
+
   def initialize(name)
     @name = name
     @inning_positions = []
@@ -36,5 +39,12 @@ end
   players.shuffle.each do |player|
     player.assign_position(available_positions)
   end
+
+end
+
+puts "Name, 1st Inning, 2nd Inning, 3rd Inning"
+players.each do |player|
+
+  puts "#{player.name},#{player.inning_positions.join(",")}"
 
 end
